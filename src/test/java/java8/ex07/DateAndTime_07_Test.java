@@ -5,6 +5,7 @@ import org.junit.Test;
 import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.time.Month;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
 
 import static org.hamcrest.CoreMatchers.is;
@@ -19,13 +20,16 @@ public class DateAndTime_07_Test {
     public void test_date_to_localdate() throws Exception {
 
         // TODO Créer une date Java 1 (12/02/2017)
-        Date date = null;
+        Date date = new Date(2017-1900, 1, 12);
 
         // TODO transformer la date en Instant
+        date.toInstant();
 
         // TODO transformer la date en LocalDate
+        
+        String dateString = date.toLocaleString();
 
-        LocalDate result = null;
+        LocalDate result = LocalDate.parse(dateString, DateTimeFormatter.ofPattern("dd MMM yyyy HH:mm:ss"));
 
         // TODO valoriser les différentes variables afin de rendre le test passant
 
